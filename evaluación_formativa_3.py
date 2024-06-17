@@ -1,4 +1,4 @@
-#Listas
+#Listas =D
 listaTrabajadores=[]
 listaCargos=[]
 listaSueldoBruto=[]
