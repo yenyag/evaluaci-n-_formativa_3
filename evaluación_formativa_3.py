@@ -18,10 +18,10 @@ class Trabajador:
         return self.sueldo_bruto*0.12
 
     def calcular_liquido(self):
-        return self.calcular_liquido
+        return self.sueldo_bruto - self.desc_salud - self.desc_afp
     
     def __str__(self):
-        return f"{self.nombre} {self.apellido}, {self.cargo}, Sueldo Bruto: {self.sueldo_bruto}, Desc. Salud: {self.desc_salud}, Desc. AFP: {self.desc_afp}, Liquidio a Pagar: {self.liquido_a_pagar}"
+        return f"{self.nombre} {self.apellido}, {self.cargo}, Sueldo Bruto: {self.sueldo_bruto}, Desc. Salud: {self.desc_salud}, Desc. AFP: {self.desc_afp}, Liquido a Pagar: {self.liquido_a_pagar}"
 
 
 def Registrar_Trabajador(Trabajadores):
@@ -70,19 +70,14 @@ while True:
             #Ingresando datos del trabajador
             Registrar_Trabajador(Trabajadores)
 
-
-
         elif opcion==2:
             print("Mostrando la Lista de todos los trabajadores actuales...");
             #Mostrando la lista de trabajadores que se han registrado
             listar_trabajadores(Trabajadores)
 
-
-
         elif opcion==3:
             print("Imprimiendo plantilla de sueldos");
             imprimir_plantilla(Trabajadores)
-
 
         elif opcion==4:
             print("Saliendo del sistema...");
