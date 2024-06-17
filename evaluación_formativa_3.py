@@ -1,9 +1,9 @@
-
+#Listas
 listaTrabajadores=[]
 listaCargos=[]
 listaSueldoBruto=[]
 
-#Aquí va el Menú
+#Aquí va el Menú :D
 while True:
     print("\n---Menú de Opciones---\n")
     print("Opción 1. Registrar trabajador")
@@ -15,8 +15,10 @@ while True:
     except ValueError:
         print("Ingrese una opción válida, desde 1 a 4")
     else:
+        #Register
         if opcion==1:
             print("Bienvenido empleado, por favor registrese: ");
+            Input
             
 
         elif opcion==2:
