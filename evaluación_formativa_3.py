@@ -1,6 +1,6 @@
+#importaciones
 import time;
-#Aqui van los pagos=D
-import Portal De Pagos
+import csv
 
 def Registrar_Trabajador(trabajadores):
     Nombre = input("Ingrese Nombre")
@@ -12,7 +12,14 @@ def Trabajador = Trabajador(Nombre, Apellido, Cargo, Sueldo_Bruto)
     trabajadores.append(trabajadores)
 def imprimir_plantilla(Trabajadores):
     cargo=input("Ingrese el cargo para imprimir la plantilla o 'todos' para imprimir todos: ")
-    nombre_archivo = "plantilla.txt"
+    pancracio = "plantilla.txt"
+     with open(nombre_archivo, "w") as file:
+        file.write("Trabajador, Cargo, Sueldo Bruto, Desc. Salud, Desc. AFP, Liquido a pagar\n")
+        for trabajador in Trabajadores:
+            if cargo.lower() == 'todos' or trabajador.cargo.lower() == cargo.lower():
+                file.write(f"{trabajador.nombre} {trabajador.apellido}, {trabajador.cargo}, {trabajador.sueldo_bruto},
+                           {trabajador.desc_salud}, {trabajador.desc_afp}, {trabajador.liquido_a_pagar}\n")
+    print(f"Plantilla generada en {Pancracio}")
 
 
 trabajadores=[]
