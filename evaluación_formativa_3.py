@@ -1,3 +1,6 @@
+import Portal De Pagos
+
+
 #Listas =D
 listaTrabajadores=[]
 listaCargos=[]
