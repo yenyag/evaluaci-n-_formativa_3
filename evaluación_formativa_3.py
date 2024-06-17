@@ -7,31 +7,30 @@ class Trabajador:
         self.apellido=apellido
         self.cargo=cargo
         self.sueldo_bruto=sueldo_bruto
-        self.desc_salud=calcular_salud
-        self.desc_afp=calcular_afp
-        self.liquido_a_pagar=calcular_liquido
+        self.desc_salud=self.calcular_salud()
+        self.desc_afp=self.calcular_afp()
+        self.liquido_a_pagar=self.calcular_liquido()
         
     def calcular_salud(self):
         return self.sueldo_bruto*0.07
 
-
     def calcular_afp(self):
         return self.sueldo_bruto*0.12
 
-
     def calcular_liquido(self):
         return self.calcular_liquido
-
+    
     def __str__(self):
         return f"{self.nombre} {self.apellido}, {self.cargo}, Sueldo Bruto: {self.sueldo_bruto}, Desc. Salud: {self.desc_salud}, Desc. AFP: {self.desc_afp}, Liquidio a Pagar: {self.liquido_a_pagar}"
 
+
 def Registrar_Trabajador(Trabajadores):
     nombre = input("Ingrese Nombre: ")
-    apellido = input("Ingrese Apellido")
+    apellido = input("Ingrese Apellido: ")
     cargo   = input ("Ingrese cargo: ") 
-    sueldo_bruto = int(input ("Ingrese sueldo bruto"))
+    sueldo_bruto = float(input ("Ingrese sueldo bruto: "))
 
-    trabajador = trabajador(nombre, apellido, cargo, sueldo_bruto)
+    trabajador = Trabajador(nombre, apellido, cargo, sueldo_bruto)
     Trabajadores.append(trabajador)
 
 def listar_trabajadores(Trabajadores):
@@ -46,12 +45,12 @@ def imprimir_plantilla(Trabajadores):
         file.write("Trabajador, Cargo, Sueldo Bruto, Desc. Salud, Desc. AFP, Liquido a pagar\n")
         for trabajador in Trabajadores:
             if cargo.lower() == 'todos' or trabajador.cargo.lower() == cargo.lower():
-                file.write(f"{trabajador.nombre} {trabajador.apellido}, {trabajador.cargo}, {trabajador.sueldo_bruto},
-                             {trabajador.desc_salud}, {trabajador.desc_afp}, {trabajador.liquido_a_pagar}\n")
+                file.write(f"{trabajador.nombre} {trabajador.apellido}, {trabajador.cargo}, {trabajador.sueldo_bruto}, {trabajador.desc_salud}, {trabajador.desc_afp}, {trabajador.liquido_a_pagar}\n")
     print(f"Plantilla generada en {Pancracio}")
 
 
-trabajadores=[]
+Trabajadores=[]
+
 #Aqui va el Menu
 while True:
     print("\n---Menu de Opciones---\n")
@@ -82,7 +81,7 @@ while True:
 
         elif opcion==3:
             print("Imprimiendo plantilla de sueldos");
-
+            imprimir_plantilla(Trabajadores)
 
 
         elif opcion==4:
@@ -92,7 +91,3 @@ while True:
             break;
         else:
                 print("Debes ingresar opciones desde 1 a 4");
-
-
-
-
