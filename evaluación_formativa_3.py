@@ -1,4 +1,5 @@
-#aqui van los pagos=D
+import time;
+#Aqui van los pagos=D
 import Portal De Pagos
 
 
@@ -35,6 +36,8 @@ while True:
 
         elif opcion==4:
             print("Saliendo del sistema...");
+            time.sleep(2)
+            print("Seción Cerrada Correctamente");
             break;
 
         else:
