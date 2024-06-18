@@ -1,5 +1,5 @@
 #Benjamin Almonacid, Vicente Placencia, Martín Villarroel
-
+#sección 006-D
 #importaciones
 import time;
 
