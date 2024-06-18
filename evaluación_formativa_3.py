@@ -1,3 +1,4 @@
+#Benjamin Almonacid, Vicente Placencia, Martín Villarroel
 
 #importaciones
 import time;
